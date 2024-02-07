@@ -1,6 +1,6 @@
 ﻿using Acme.Resource.Common.Enums;
 
-namespace Acme.Resource.Business.DataTransferObjects
+namespace Acme.Resource.Common.DataTransferObjects
 {
 	public class CalculateSalaryDto
 	{

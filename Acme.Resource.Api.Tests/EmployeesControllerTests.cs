@@ -1,6 +1,6 @@
-using Acme.Resource.Business.DataTransferObjects;
 using Acme.Resource.Business.Interfaces;
 using Acme.Resource.Business.Services;
+using Acme.Resource.Common.DataTransferObjects;
 using Acme.Resource.Common.Enums;
 using Acme.Resource.Web;
 using Acme.Resource.Web.Controllers;

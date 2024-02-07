@@ -1,5 +1,5 @@
-﻿using Acme.Resource.Business.DataTransferObjects;
-using Acme.Resource.Business.Interfaces;
+﻿using Acme.Resource.Business.Interfaces;
+using Acme.Resource.Common.DataTransferObjects;
 
 namespace Acme.Resource.Business.ServiceCreators
 {

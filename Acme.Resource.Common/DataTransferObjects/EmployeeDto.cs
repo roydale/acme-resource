@@ -1,4 +1,4 @@
-﻿namespace Acme.Resource.Business.DataTransferObjects
+﻿namespace Acme.Resource.Common.DataTransferObjects
 {
 	public class EmployeeDto
 	{

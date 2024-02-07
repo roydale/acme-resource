@@ -1,5 +1,5 @@
-﻿using Acme.Resource.Business.DataTransferObjects;
-using Acme.Resource.Business.Interfaces;
+﻿using Acme.Resource.Business.Interfaces;
+using Acme.Resource.Common.DataTransferObjects;
 using Acme.Resource.Common.Enums;
 
 namespace Acme.Resource.Business.Services

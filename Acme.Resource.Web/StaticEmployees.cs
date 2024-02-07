@@ -1,5 +1,4 @@
-﻿using Acme.Resource.Business.DataTransferObjects;
-using System.Collections.Generic;
+﻿using Acme.Resource.Common.DataTransferObjects;
 
 namespace Acme.Resource.Web
 {

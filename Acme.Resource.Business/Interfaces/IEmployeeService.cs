@@ -1,4 +1,4 @@
-﻿using Acme.Resource.Business.DataTransferObjects;
+﻿using Acme.Resource.Common.DataTransferObjects;
 
 namespace Acme.Resource.Business.Interfaces
 {

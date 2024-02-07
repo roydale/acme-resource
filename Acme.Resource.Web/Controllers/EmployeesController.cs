@@ -1,9 +1,8 @@
-﻿using Acme.Resource.Business.DataTransferObjects;
-using Acme.Resource.Business.Interfaces;
+﻿using Acme.Resource.Business.Interfaces;
+using Acme.Resource.Common.DataTransferObjects;
 using Acme.Resource.Common.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace Acme.Resource.Web.Controllers
 {
