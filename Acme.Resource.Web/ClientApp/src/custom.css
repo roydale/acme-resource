@@ -1,0 +1,26 @@
+/* Provide sufficient contrast against white background */
+a {
+	color: #0366d6;
+}
+
+code {
+	color: #E01A76;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #1b6ec2;
+	border-color: #1861ac;
+}
+
+div.form-group {
+}
+
+	div.form-group span {
+		color: red;
+		margin-left: 0.8em;
+	}
+
+.pull-right {
+	float: right;
+}

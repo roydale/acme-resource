@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Acme.Resource.Api.Tests/bin
+/Acme.Resource.Api.Tests/obj
+/Acme.Resource.Business.Tests/bin
+/Acme.Resource.Business.Tests/obj
+/Acme.Resource.Business/bin
+/Acme.Resource.Business/obj
+/Acme.Resource.Common/bin
+/Acme.Resource.Common/obj
+/Acme.Resource.Data/bin
+/Acme.Resource.Data/obj
+/.vs

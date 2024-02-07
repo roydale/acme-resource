@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.Resource.Common\Acme.Resource.Common.csproj" />
+    <ProjectReference Include="..\Acme.Resource.DataAccess\Acme.Resource.Data.csproj" />
+  </ItemGroup>
+
+</Project>
