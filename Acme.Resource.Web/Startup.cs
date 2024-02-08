@@ -1,6 +1,7 @@
 using Acme.Resource.Business.Interfaces;
 using Acme.Resource.Business.ServiceCreators;
 using Acme.Resource.Business.Services;
+using Acme.Resource.Common.Utilities.DataGenerator;
 using Acme.Resource.Data;
 using Acme.Resource.Web.Data;
 using Acme.Resource.Web.Models;
@@ -32,6 +33,8 @@ namespace Acme.Resource.Web
 			services.AddTransient<ISalaryService, RegularSalaryService>();
 			services.AddTransient<ISalaryService, ContractualSalaryService>();
 			services.AddTransient<ISalaryServiceFactory, SalaryServiceFactory>();
+			services.AddTransient<IFakerService, FakerService>();
+			services.AddTransient<FakeDataGenerator>();
 
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(

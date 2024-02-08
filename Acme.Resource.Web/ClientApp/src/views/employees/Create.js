@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import authService from '../../components/api-authorization/AuthorizeService';
+import { ArrowClockwise } from 'react-bootstrap-icons';
 
 export class EmployeeCreate extends Component {
 	static displayName = EmployeeCreate.name;
@@ -11,6 +12,7 @@ export class EmployeeCreate extends Component {
 			birthdate: '',
 			tin: '',
 			typeId: 1,
+			profileImage: '',
 			loading: false,
 			loadingSave: false,
 			isSubmitted: false,
@@ -43,6 +45,21 @@ export class EmployeeCreate extends Component {
 			? <p><em>Loading...</em></p>
 			: <div>
 				<form>
+					<div className='form-row'>
+						<div className='form-group col-md-6'>
+							{this.state.profileImage
+								? <img src={this.state.profileImage} className='profile' alt={this.state.fullName} height={150} width={150} />
+								: <img src={'../assets/blank-avatar.jpg'} className='profile' alt='Empty' height={150} width={150} />
+							}
+							<ArrowClockwise onClick={() => this.refreshImage()}
+								className='refresh-image'
+								title='Refresh Image'
+								color="royalblue"
+								size={24} />
+						</div>
+						<div className='form-group col-md-6'>
+						</div>
+					</div>
 					<div className='form-row'>
 						<div className='form-group col-md-6'>
 							<label htmlFor='inputFullName4'>Full Name: *</label>
@@ -84,14 +101,14 @@ export class EmployeeCreate extends Component {
 					</div>
 					<button type="submit" onClick={this.handleSubmit.bind(this)} disabled={this.state.loadingSave} className="btn btn-primary mr-2">{this.state.loadingSave ? "Loading..." : "Save"}</button>
 					<button type="button" onClick={() => this.props.history.push("/employees/index")} className="btn btn-primary">Back</button>
-					<button type="button" onClick={() => this.generateValues()} className="btn btn-primary pull-right">Generate</button>
+					<button type="button" onClick={() => this.generateFakeData()} className="btn btn-primary pull-right">Generate</button>
 				</form>
 			</div>;
 
 		return (
 			<div>
-				<h1 id="tabelLabel" >Employee Create</h1>
-				<p>All fields are required</p>
+				<h1 id="tabelLabel">Add Employee</h1>
+				<p>* Required Fields</p>
 				{contents}
 			</div>
 		);
@@ -137,11 +154,27 @@ export class EmployeeCreate extends Component {
 		}
 	}
 
-	async generateValues() {
+	async generateFakeData() {
 		const token = await authService.getAccessToken();
 		const response = await fetch('api/employees/generate', {
 			headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
 		});
-		console.log(response);
+		const data = await response.json();
+		this.setState({
+			fullName: data.fullName,
+			birthdate: data.birthdate,
+			tin: data.tin,
+			typeId: data.typeId,
+			profileImage: data.profileImage,
+		});
+	}
+
+	async refreshImage() {
+		const token = await authService.getAccessToken();
+		const response = await fetch('api/employees/refresh-image', {
+			headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
+		});
+		const data = await response.json();
+		this.setState({ profileImage: data.profileImage });
 	}
 }

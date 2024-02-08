@@ -18,10 +18,11 @@ namespace Acme.Resource.Api.Tests
 		public readonly EmployeesController controller;
 		public readonly ISalaryServiceFactory mockServiceFactory = Substitute.For<ISalaryServiceFactory>();
 		public readonly IEmployeeService mockService = Substitute.For<IEmployeeService>();
+		public readonly IFakerService mockFakerService = Substitute.For<IFakerService>();
 
 		public EmployeesControllerTests()
 		{
-			controller = new EmployeesController(mockServiceFactory, mockService);
+			controller = new EmployeesController(mockServiceFactory, mockService, mockFakerService);
 		}
 
 		[TestMethod]

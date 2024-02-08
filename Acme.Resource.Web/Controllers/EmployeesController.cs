@@ -9,17 +9,10 @@ namespace Acme.Resource.Web.Controllers
 	[Authorize]
 	[Route("api/[controller]")]
 	[ApiController]
-	public class EmployeesController : ControllerBase
+	public class EmployeesController(ISalaryServiceFactory _serviceFactory
+									, IEmployeeService _service
+									, IFakerService _fakerService) : ControllerBase
 	{
-		private readonly ISalaryServiceFactory _serviceFactory;
-		private readonly IEmployeeService _service;
-
-		public EmployeesController(ISalaryServiceFactory serviceFactory, IEmployeeService service)
-		{
-			_serviceFactory = serviceFactory;
-			_service = service;
-		}
-
 		/// <summary>
 		/// Refactor this method to go through proper layers and fetch from the DB.
 		/// </summary>
@@ -102,7 +95,15 @@ namespace Acme.Resource.Web.Controllers
 		[HttpGet("generate")]
 		public IActionResult Generate()
 		{
-			return Ok("Generate Bogus!");
+			var fakeEmployeeData = _fakerService.GenerateRandomEmployee();
+			return Ok(fakeEmployeeData);
+		}
+
+		[HttpGet("refresh-image")]
+		public IActionResult GetProfileImage()
+		{
+			var fakeProfileImage = _fakerService.GenerateProfileImage();
+			return Ok(new { profileImage = fakeProfileImage });
 		}
 	}
 }

@@ -24,3 +24,16 @@ div.form-group {
 .pull-right {
 	float: right;
 }
+
+.profile {
+	border: 1px solid #000000;
+}
+
+.refresh-image {
+	vertical-align: bottom;
+	margin-left: 5px;
+}
+
+	.refresh-image:hover {
+		cursor: pointer;
+	}

@@ -36,6 +36,7 @@ namespace Acme.Resource.Business.Services
 			employeeToUpdate.TIN = employeeDto.Tin;
 			employeeToUpdate.Birthdate = employeeDto.Birthdate;
 			employeeToUpdate.EmployeeTypeId = employeeDto.TypeId;
+			employeeToUpdate.ProfileImage = employeeDto.ProfileImage;
 			_context.SaveChanges();
 
 			return ConvertToDto(employeeToUpdate);
@@ -49,6 +50,7 @@ namespace Acme.Resource.Business.Services
 				Birthdate = employeeDto.Birthdate,
 				TIN = employeeDto.Tin,
 				EmployeeTypeId = employeeDto.TypeId,
+				ProfileImage = employeeDto.ProfileImage,
 				IsDeleted = false
 			};
 			await _context.Employees.AddAsync(employeeToCreate);
@@ -84,7 +86,8 @@ namespace Acme.Resource.Business.Services
 				Birthdate = employee.Birthdate.ToString("yyyy-MM-dd"),
 				FullName = employee.FullName,
 				Tin = employee.TIN,
-				TypeId = employee.EmployeeTypeId
+				TypeId = employee.EmployeeTypeId,
+				ProfileImage = employee.ProfileImage
 			};
 		}
 	}

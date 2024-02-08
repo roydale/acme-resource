@@ -5,7 +5,10 @@ export class EmployeesIndex extends Component {
 	static displayName = EmployeesIndex.name;
 	constructor(props) {
 		super(props);
-		this.state = { employees: [], loading: true };
+		this.state = {
+			employees: [],
+			loading: true
+		};
 	}
 
 	componentDidMount() {
@@ -53,8 +56,7 @@ export class EmployeesIndex extends Component {
 
 		return (
 			<div>
-				<h1 id="tabelLabel" >Employees</h1>
-				<p>This page should fetch data from the server.</p>
+				<h1 id="tabelLabel">Employee List</h1>
 				<p><button type='button' className='btn btn-success mr-2 pull-right' onClick={() => this.props.history.push("/employees/create")} >Create</button></p>
 				{contents}
 			</div>

@@ -5,7 +5,19 @@ export class EmployeeCalculate extends Component {
 	static displayName = EmployeeCalculate.name;
 	constructor(props) {
 		super(props);
-		this.state = { id: 0, fullName: '', birthdate: '', tin: '', typeId: 1, absentDays: 0, workedDays: 0, netIncome: 0, loading: true, loadingCalculate: false };
+		this.state = {
+			id: 0,
+			fullName: '',
+			birthdate: '',
+			tin: '',
+			typeId: 1,
+			profileImage: '',
+			absentDays: 0,
+			workedDays: 0,
+			netIncome: 0,
+			loading: true,
+			loadingCalculate: false
+		};
 	}
 
 	componentDidMount() {
@@ -85,7 +97,7 @@ export class EmployeeCalculate extends Component {
 
 		return (
 			<div>
-				<h1 id="tabelLabel" >Employee Calculate Salary</h1>
+				<h1 id="tabelLabel">Calculate Salary</h1>
 				<br />
 				{contents}
 			</div>
@@ -118,7 +130,16 @@ export class EmployeeCalculate extends Component {
 
 		if (response.status === 200) {
 			const data = await response.json();
-			this.setState({ id: data.id, fullName: data.fullName, birthdate: data.birthdate, tin: data.tin, typeId: data.typeId, loading: false, loadingCalculate: false });
+			this.setState({
+				id: data.id,
+				fullName: data.fullName,
+				birthdate: data.birthdate,
+				tin: data.tin,
+				typeId: data.typeId,
+				profileImage: data.profileImage,
+				loading: false,
+				loadingCalculate: false
+			});
 		}
 		else {
 			alert("There was an error occured.");

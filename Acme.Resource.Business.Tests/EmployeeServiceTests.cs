@@ -48,6 +48,7 @@ namespace Acme.Resource.Business.Tests
 				FullName = e.FullName,
 				TIN = e.Tin,
 				EmployeeTypeId = e.TypeId,
+				ProfileImage = string.Empty,
 				IsDeleted = false
 			}));
 			dbContext.Employees.AddRange(employees);

@@ -33,11 +33,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="ClientApp\public\assets\" />
 		<Folder Include="ClientApp\src\views\employees\" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Acme.Resource.Business\Acme.Resource.Business.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ClientApp\public\assets\blank-avatar.jpg">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 	<Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

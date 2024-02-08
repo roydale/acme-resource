@@ -12,6 +12,8 @@
 
 		public int EmployeeTypeId { get; set; }
 
+		public string ProfileImage { get; set; }
+
 		public bool IsDeleted { get; set; }
 	}
 }
